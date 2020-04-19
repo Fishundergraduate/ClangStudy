@@ -38,7 +38,7 @@ void input(personal_data *data,int num){
 
 void output(personal_data *data,int num){
     printf("---------------------------------------------------------------\n");
-    printf("%d人目のデータを出力しますね．\n",num);
+    printf("%d人目のデータを出力しますね．\n",num+1);
     printf("名前：%s\n年齢：%d\n",data->name,data->year_old);
     if (data->gendar == 0)
     {
