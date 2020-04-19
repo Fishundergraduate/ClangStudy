@@ -25,9 +25,9 @@ int main(void){
 void input(personal_data *data,int num){
     printf("%d人目のデータを入力していきます\n",num+1);
     printf("%d人目の名前を入力してください：",num+1);
-    scanf("%s",data[num].name);
+    scanf("%s",data->name);
     printf("%d人目の年齢を入力してください：",num+1);
-    scanf("%d",data[num].year_old);
+    scanf("%d",&data->year_old);
     printf("%d人目の性別を入力してください，男性なら\"0\"，女性なら\"1\"です．：",num+1);
-    scanf("%d",data[num].gendar);
+    scanf("%d",&data->gendar);
 }
