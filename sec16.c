@@ -8,17 +8,21 @@ typedef struct{
 }personal_data;/*データ部*/
 
 void input(personal_data *data,int); /*入力部*/
+void output(personal_data *data,int);/*出力部分*/
 
 
 int main(void){
     personal_data data[3];
-    int num=0;
-    for (num = 0; num< 3;num++)
+    for (int num = 0; num< 3;num++)
     {
         input(&data[num],num);
     }
     printf("入力されたデータは以下の通りです．\n");
-
+    for (int i = 0; i < 3; i++)
+    {
+        output(&data[i],i);
+    }
+    
     return 0;
 }
 
@@ -30,4 +34,23 @@ void input(personal_data *data,int num){
     scanf("%d",&data->year_old);
     printf("%d人目の性別を入力してください，男性なら\"0\"，女性なら\"1\"です．：",num+1);
     scanf("%d",&data->gendar);
+}
+
+void output(personal_data *data,int num){
+    printf("---------------------------------------------------------------\n");
+    printf("%d人目のデータを出力しますね．\n",num);
+    printf("名前：%s\n年齢：%d\n",data->name,data->year_old);
+    if (data->gendar == 0)
+    {
+        printf("性別：男\n");
+    }else if (data->gendar == 1)
+    {
+        printf("性別：女\n");
+    }else
+    {
+        printf("!Error!:入力値が %d になってるヨ！Bool変数使ってネ！",num);
+    }
+    
+    
+    
 }
