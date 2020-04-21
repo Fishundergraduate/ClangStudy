@@ -49,8 +49,5 @@ void output(personal_data *data,int num){
     }else
     {
         printf("!Error!:入力値が %d になってるヨ！Bool変数使ってネ！",num);
-    }
-    
-    
-    
+    }    
 }
