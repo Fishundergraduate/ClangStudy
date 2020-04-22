@@ -38,6 +38,7 @@ int main(int argc,char *argv[]){
         FILE *file;
         printf("CSVファイルに出力します．\n");
         file = fopen("peoplelist.csv","w+");
+        fprintf(file,"番号,名前,年齢,性別\n");
         for (int i = 0; i < num-1; i++)/*CSV output module*/
         {
             csvoutput(heap[i],i,file);
@@ -94,5 +95,5 @@ void csvoutput(personal_data data,int num,FILE *file){
     {
         printf("!Error!:入力値が %d になってるヨ！Bool変数使ってネ！",data.gendar);
     }    
-    fprintf(file,"%d,%s,%d,%s",num+1,data.name,data.year_old,gendar);/*番号，名前，年齢，性別*/
+    fprintf(file,"%d,%s,%d,%s\n",num+1,data.name,data.year_old,gendar);/*番号，名前，年齢，性別*/
 }
